@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html> <head> <style>
+    .flex-container {
+      display: flex;  flex-direction:row;
+      background-color: coral;
+  }
+
+.flex-container > div {  /*div children of the flex container*/
+  background-color: #f1f1f1; 
+  margin: 10px;  padding: 20px;  font-size: 30px;
+}
+
+
+@media (max-width: 600px) { 
+	 .flex-container{
+		 flex-direction:column;
+		 background-color:blue;
+	  }
+	}
+</style>
+<title>Checklist</title>
+</head>
+
+
+
+<body>
+
+    <h1>Navya Sri Alaparthi builds a stack</h1>
+
+    
+    <br>
+    <input type="text" class="form-control" id="form_input" name="inputElement" placeholder="Enter a Text">
+    <br><br>
+    <label for="exampleDataList" class="form-label" id="form-label">Press the button to create an new element of type
+        div and then add it to the container.</label>
+    <br><br>
+    <button id="makenewdiv" onclick="makeNewDiv()">Push value</button>
+    
+    <br><br>
+    <div class="flex-container" id="target">
+        <div class="stack">row item 1</div>
+        <div class="stack">row item 2</div>
+        <div class="stack">row item 3</div>
+    </div>
+</body>
+<script>
+
+    function makeNewDiv() {
+        let element = document.createElement("div")
+        value = document.getElementById("form_input").value
+        element.innerHTML = value
+        element.className = "stack"
+        document.getElementById('target').appendChild(element)
+    }
+</script>
+</html>	
