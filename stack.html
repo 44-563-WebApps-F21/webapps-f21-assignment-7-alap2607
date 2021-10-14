@@ -45,7 +45,7 @@
         <button id="push" onclick="makeNewDiv()" class="btn btn-success">Push value</button>
         <button id="pop" onclick="popItem()" class="btn btn-danger">Pop</button>
         <button id="zap" onclick="zap()" class="btn btn-primary">Zap value</button>
-        
+        <button class="btn btn-primary" onclick="unique()">Unique</button>
         <br>
         <br>
         <div class="flex-container" id="target">
@@ -90,8 +90,22 @@
             }
         }
     }
-
-    
+    function unique()
+         {
+         var stackItems = document.getElementsByClassName("stack")
+		 for(var i=0; i<stackItems.length; i++)
+         {
+		 for(var j=i+1; j<stackItems.length; j++)
+         {
+            if(stackItems[i].innerHTML == stackItems[j].innerHTML)
+                {
+                    stackItems[j].remove()
+                    i--;
+                    break;
+                }
+         }
+            }
+             }
 </script>
 </body>
 </html>
