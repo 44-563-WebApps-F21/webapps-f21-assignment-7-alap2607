@@ -45,6 +45,7 @@ text-align: center;
     <div class="container col-md-5 text-info" id="distance">Distance is unknown</div>
     
     
+    
     <div class="container ">
     <div class="d-flex justify-content-center">
         <div><img src="plant.jpg" height="150" width="150" class="img-fluid" id="0" onclick="check(0)" alt="plant"></div>
@@ -79,7 +80,8 @@ text-align: center;
         <div><img src="plant.jpg" height="150" width="150" class="img-fluid" id="23" onclick="check(23)" alt="plant"></div>
     </div>
 </div>
-<button align="middle" id="unique" onclick="game()" class="btn btn-secondary">Unique</button>
+
+    </div>
 <script>
     let ids = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"]
     let triesCount=0;
@@ -116,9 +118,14 @@ text-align: center;
             break;
               }
           }
-            let distance = Math.abs(x2 - x1) + Math.abs(y2 - y1);
-            return distance;
-}
+        }
+          function newGame(){
+            clickCount =0
+            let treasureLocation = Math.random(0,24)
+            document.getElementById("tries").innerHTML="Number of clicks is "+clickCount
+            document.getElementById("distance").innerHTML="Distance is Unknown"
+
+          }
 </script>
 </body>
 </html>
